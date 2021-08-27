@@ -13,7 +13,7 @@ jobs:
           accessToken: ${{ secrets.ACCESS_TOKEN }}
       - name: process JSON
         id: process
-        uses: olithissen/create-hugo-page-from-json-action@master
+        uses: olithissen/create-hugo-page-from-json-action@main
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
