@@ -1,0 +1,5 @@
+name: 'Create Hugo page from JSON'
+description: 'This action takes a JSON file and generates pages for the Hugo static site generator'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

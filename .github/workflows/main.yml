@@ -1,0 +1,22 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: a 'retrieve pocket' testjob 💼
+    steps:
+      - name: retrieve from Pocket
+        id: pocket
+        uses: olithissen/pocket-retrieve-action@v1
+        with:
+          consumerKey: ${{ secrets.CONSUMER_KEY }}
+          accessToken: ${{ secrets.ACCESS_TOKEN }}
+      - name: process JSON
+        id: process
+        uses: olithissen/create-hugo-page-from-json-action@master
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: all the JSON
+          path: |
+            *.json
